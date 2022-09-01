@@ -1,2 +1,2 @@
 # projetoIntegrador
-Exemplo de projeto
+Exemplo de projeto para evoluir com os alunos durante as aulas.
