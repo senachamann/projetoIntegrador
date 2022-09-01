@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
-namespace ProjetoIntegrador
+namespace ProjetoIntegrador.Infrastructure
 {
     internal class SampleAccessDataBase
     {
         public void ExecuteSql()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
-            builder.DataSource = "<your_server.database.windows.net>";
-            builder.UserID = "<your_username>";
-            builder.Password = "<your_password>";
-            builder.InitialCatalog = "<your_database>";
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
+            {
+                DataSource = "<your_server.database.windows.net>",
+                UserID = "<your_username>",
+                Password = "<your_password>",
+                InitialCatalog = "<your_database>"
+            };
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
