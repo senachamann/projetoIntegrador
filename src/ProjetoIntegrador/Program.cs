@@ -13,6 +13,10 @@ namespace ProjetoIntegrador
         [STAThread]
         static void Main(string[] args)
         {
+            var sampleDataBase = new SampleAccessDataBase();
+            var users =  sampleDataBase.ExecuteSql("Select * from TBUSERS", "Server=localhost,DataSource=aula,user=sa,password=testes@123");
+
+
             var pathToContentRoot = Directory.GetCurrentDirectory();
             var fileToLoad = args != null && args.Length > 0 ? args[0] : string.Empty;
             var host = new HostBuilder()
